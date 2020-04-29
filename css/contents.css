@@ -1,0 +1,104 @@
+.greetingBox {
+    background-image: url("../images/greeting01.jpg");
+    padding-left: 600px;
+    background-repeat: no-repeat;
+}
+
+.headerTxt {
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+.headerTxt strong {
+    font-weight: 700;
+    color: #970910;
+}
+.txt p {
+    margin-bottom: 20px;
+    color: #666;
+    word-break: keep-all;
+    /* 단어별로 끊어쓰기 */
+    
+}
+
+#lnb {
+    position: absolute;
+    height: 70px;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: left;
+    z-index: 1;
+}
+#lnb .btnHome {
+    float: left; 
+    display: block; 
+    width: 70px; 
+    height: 70px; 
+    line-height: 70px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+#lnb .listBox {
+    float: left;
+    width: 340px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    margin: -1px;
+}
+
+#lnb .listBox a {
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 20px;
+    position: relative;
+}
+#lnb .listBox a i {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    line-height: 70px;
+}
+#lnb .listBox ul li a {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: -1px;
+}
+#lnb .listBox ul {
+    display: none;
+}
+#lnb .listBox ul li:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.contentsTitle {
+    padding: 100px 0 30px 0;
+    text-align: center;
+    font-size: 52px;
+    position: relative;
+}
+.container {
+    width: 1400px;
+    margin: auto;
+}
+#subContents {
+    padding-bottom: 300px;
+}
+table {
+    width: 100%;
+    text-align: center;
+    color: #666666;
+}
+table thead {
+    background-color: #f8f8f8;
+    border-top: 1px solid #bf0c14;
+    font-weight: 700;
+}
+table th, table td {
+    padding: 15px 10px;
+    border-left: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+}
+table th:nth-child(1), table td:nth-child(1) {
+    border-left: none;
+}

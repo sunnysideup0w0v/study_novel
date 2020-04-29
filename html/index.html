@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/swiper.css">
+    <link rel="stylesheet" href="../css/splitting.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+    <link rel="stylesheet" href="../css/xeicon.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/interaction.css">
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/greensock/gsap.min.js"></script>
+    <script src="../js/greensock/SplitText.min.js.map"></script>
+    <script src="../js/splitting.min.js"></script>
+    <script defer src="../js/main.js"></script>
+</head>
+<body>
+    <div id="skip">
+        <a href="#mainContents">본문바로가기</a>
+        <!-- 접근성 마크 획득하기 위한 요소 -->
+    </div>
+    <header id="header">
+        <h1 id="logo">
+            <a href="">
+                <img src="../images/layout/logo.png" alt="novel-works">
+            </a>
+        </h1>
+        <? include("../include/gnb.html"); ?>
+            <div class="util">
+                <div class="language">
+                    <a href="">ENG</a>
+                    <a href="" class="on">KOR</a>
+                </div>
+                <button class="btnAll">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+    </header>
+    <!-- header End -->
+    <div id="mainVisual">
+        <div class="mask">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide visual01">
+                    <div class="txtBox">
+                        <p class="sub" data-splitting>
+                            GLOBAL BUSINESS
+                        </p>
+                        <p class="main" data-splitting>
+                            <span class="green">N</span>OVEL <br>
+                            <span class="blue">W</span>ORKS
+                        </p>
+                    </div>
+                    <div class="onlyMobile">
+                        <img src="../images/main/main_visual_01_m.jpg" alt="">
+                    </div>
+                </li>
+                <li class="swiper-slide visual02">
+                    <div class="txtBox">
+                        <p class="sub" data-splitting>
+                            GLOBAL BUSINESS
+                        </p>
+                        <p class="main" data-splitting>
+                            NOVEL <br>
+                            WORKS
+                        </p>
+                    </div>
+                    <div class="onlyMobile">
+                        <img src="../images/main/main_visual_02_m.jpg" alt="">
+                    </div>
+                </li>
+                <li class="swiper-slide visual03">
+                    <div class="txtBox">
+                        <p class="sub" data-splitting>
+                            GLOBAL BUSINESS
+                        </p>
+                        <p class="main" data-splitting>
+                            NOVEL <br>
+                            WORKS
+                        </p>
+                    </div>
+                    <div class="onlyMobile">
+                        <img src="../images/main/main_visual_03_m.jpg" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="btns">
+            <button class="btnPrev"><i class="xi-angle-left"></i></button>
+            <button class="btnNext"><i class="xi-angle-right"></i></button>
+        </div>
+    </div>
+    <!-- mainVisual End -->
+    <div id="mainContents">
+        <section id="summary" class="clearFix">
+            <div class="contentsBox">
+                <div class="inner">
+                    <div class="infoBox">
+                        <h2>제품기획 개발 생산</h2>
+                        <ul>
+                            <li>UV 소독</li>
+                            <li>CLEAN</li>
+                            <li>소형가전</li>
+                            <li>BEAUTY</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="contentsBox">
+                <div class="contents">
+                    <div class="inner">
+                        <div class="imgBox">
+                            <div class="txtBox">
+                                <p>
+                                    국내를 넘어 <br>
+                                    세계로 도약하는 기업 <br>
+                                    <span class="green">N</span>OVEL <span class="blue">W</span>ORKS
+                                </p>
+                            </div>
+                        </div>
+                        <div class="infoBox">
+                            <h2>Research & Develope</h2>
+                            <ul>
+                                <li>센서 개발</li>
+                                <li>UV LED 적용 기술</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="contents">
+                    <div class="inner">
+                        <div class="imgBox"></div>
+                        <div class="infoBox">
+                            <h2>
+                                ODM / OEM
+                            </h2>
+                            <ul>
+                                <li>제품 기획</li>
+                                <li>금형 설계</li>
+                                <li>디자인/설계</li>
+                                <li>시제품 제작</li>
+                                <li>회로 설계</li>
+                                <li>양산품 제작</li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+        <section id="process" class="clearFix">
+            <div class="titleBox">
+                <h2>DEV.PROCESS</h2>
+                <p>
+                    노블웍스는 체계화된 개발 프로세스로 품질좋은 상품을 제작합니다.
+                </p>
+            </div>
+            <div class="icons">
+                <ul class="clearFix">
+                    <li>
+                        <span class="icon">
+                            <img src="../images/main/main_con02_icon01.jpg" alt="">
+                        </span>
+                        <span class="txtBox">
+                            <span class="no">01</span>
+                            <span class="txt">제품기획</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <img src="../images/main/main_con02_icon02.jpg" alt="">
+                        </span>
+                        <span class="txtBox">
+                            <span class="no">02</span>
+                            <span class="txt">제품기획</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <img src="../images/main/main_con02_icon03.jpg" alt="">
+                        </span>
+                        <span class="txtBox">
+                            <span class="no">03</span>
+                            <span class="txt">기구 설계</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <img src="../images/main/main_con02_icon04.jpg" alt="">
+                        </span>
+                        <span class="txtBox">
+                            <span class="no">04</span>
+                            <span class="txt">회로 개발</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <img src="../images/main/main_con02_icon05.jpg" alt="">
+                        </span>
+                        <span class="txtBox">
+                            <span class="no">05</span>
+                            <span class="txt">시제품 제작</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <img src="../images/main/main_con02_icon06.jpg" alt="">
+                        </span>
+                        <span class="txtBox">
+                            <span class="no">06</span>
+                            <span class="txt">금형 제작</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <img src="../images/main/main_con02_icon07.jpg" alt="">
+                        </span>
+                        <span class="txtBox">
+                            <span class="no">07</span>
+                            <span class="txt">패키지 제작</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <img src="../images/main/main_con02_icon08.jpg" alt="">
+                        </span>
+                        <span class="txtBox">
+                            <span class="no">08</span>
+                            <span class="txt">양산품 생산</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="product" class="clearFix">
+            <div class="titleBox">
+                <h2><span class="green">D</span>EVELOPMENT <span class="blue">I</span>NTRODUCTION</h2>
+            </div>
+            <div class="productBox">
+                <div class="mask">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><img src="../images/main/main_con03_img01.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../images/main/main_con03_img02.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="../images/main/main_con03_img03.jpg" alt=""></li>
+                    </ul>
+                </div>
+                <button class="btnPrev">
+                    <i class="xi-angle-left"></i>
+                </button>
+                <button class="btnNext">
+                    <i class="xi-angle-right"></i>
+                </button>
+            </div>
+            <div class="descBox">
+                <div class="mask">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide txt01">
+                            <div class="inner">
+                                <span class="img"><img src="../images/main/main_con03_img1_01_prd.png" alt=""></span>
+                                <span class="bigTitle">UV LED</span>
+                                <p>
+                                    UV LED기술을 선도하는 기업 <br>
+                                    노블웍스는 차별화된 기술력을 통해 <br>
+                                    고객사와 함께 성장해나갑니다.
+                                </p>
+                                <a href="" class="btnMore"><i class="xi-plus"></i></a>
+                            </div>
+                        </li>
+                        <li class="swiper-slide txt02">
+                            <div class="inner">
+                                <span class="img"><img src="../images/main/main_con03_img2_01_prd.png" alt=""></span>
+                                <span class="bigTitle">광촉매 살균</span>
+                                <p>
+                                    노블웍스만의 차별화 된 광촉매 살균 기술. <br>
+    								광촉매 살균 [UV-A]은 촉매작용을 갖게 되는 물질로 <br>
+    								반영구적 사용이 가능하고, 인체에 무해합니다.
+                                </p>
+                                <a href="" class="btnMore"><i class="xi-plus"></i></a>
+                            </div>
+                        </li>
+                        <li class="swiper-slide txt03">
+                            <div class="inner">
+                                <span class="bigTitle">NOVEL WORKS</span>
+                                <a href="" class="btnMore"><i class="xi-plus"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="online" class="clearFix">
+            <div class="titleBox">
+                <h2>온라인 상담신청</h2>
+            </div>
+            <div class="container clearFix">
+                <div class="info">
+                    <ul>
+                        <li>
+                            <label><span>이름</span><input type="text" placeholder="담당자 성함을 입력하세요"></label>
+                        </li>
+                        <li>
+                            <label><span>회사명</span><input type="text" placeholder="회사명을 입력하세요"></label>
+                        </li>
+                        <li>
+                            <label><span>연락처</span><input type="text" placeholder="연락처를 '-'없이 입력하세요"></label>
+                        </li>
+                        <li>
+                            <label>
+                                <span>문의상품</span>
+                                <select name="" id="">
+                                    <option value="6">JJBI BOX</option>
+                                    <option value="22">JJOBI</option>
+									<option value="7">JJOBI<option>	
+                                    <option value="23">JJOBI BOX</option>
+                                    <option value="13">스마트 아로마 디퓨저</option>
+									<option value="12">스마트 아로마 디퓨저</option>
+									<option value="27">이유식 수저 살균기</option>
+									<option value="26">이유식 수저 살균기</option>
+									<option value="24">칫솔살균기</option>
+                                    <option value="5">칫솔살균기</option>
+                                    <option value="21">코코몽 에어조이</option>
+									<option value="8">코코몽 에어조이</option>
+									<option value="14">큐빙가습기</option>
+									<option value="11">큐빙가습기</option>
+									<option value="15">패브릭 장난감 살균함</option>
+									<option value="10">패브릭 장난감 살균함</option>
+									<option value="28">폼 디스펜서</option>
+									<option value="25">폼 디스펜서</option>
+                                </select>
+                            </label>
+                        </li>
+                    </ul>
+                    <div class="privacyBox">
+                        <button class="btnPrivacy">개인정보 처리방침<i class="xi-search"></i></button>
+                        <label class="checkPrivacy">
+                            <input type="checkbox" name="" id="">
+                            <span class="txt">
+                                개인정보처리방침에 동의합니다.
+                                <i class="xi-check-circle-o xi-2x"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="write">
+                    <h3>문의내용</h3>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="문의하실 내용을 입력해 주세요"></textarea>
+                    <a href="" class="btnRequest">상담 신청하기</a>
+                </div>
+            </div>
+        </section>
+        <section id="location">
+            <div class="titleBox">
+                <h2>오시는 길</h2>
+            </div>
+            <div class="map">
+                <div id="map" style="width:100%;height:350px;"></div>
+                <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c06ea97803c0ac9583473a0fa460726f&libraries=services"></script>
+                <script>
+                    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                      mapOption = { 
+                            center: new kakao.maps.LatLng(37.54699, 127.09598), // 지도의 중심좌표
+                            level: 4 // 지도의 확대 레벨
+                        };
+                    
+                    var map = new kakao.maps.Map(mapContainer, mapOption);
+
+                    //주소로 장소 표시하기
+                    // 주소-좌표 변환 객체를 생성합니다
+                    var geocoder = new kakao.maps.services.Geocoder();
+
+                    // 주소로 좌표를 검색합니다
+                    geocoder.addressSearch('서울시 금천구 두산로 70 현대지식산업센터', function(result, status) {
+
+                        // 정상적으로 검색이 완료됐으면 
+                        if (status === kakao.maps.services.Status.OK) {
+
+                            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+                            console.log("coords===",coords)
+
+                            var imageSrc = '../images/layout/mark.png', // 마커이미지의 주소입니다    
+                                imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
+                                imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+                            
+                            // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+                            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+                                markerPosition = coords; // 마커가 표시될 위치입니다
+                            
+                            // 마커를 생성합니다
+                            var marker = new kakao.maps.Marker({
+                            position: markerPosition,
+                            image: markerImage // 마커이미지 설정 
+                            });
+                            
+                            // 마커가 지도 위에 표시되도록 설정합니다
+                            marker.setMap(map);  
+                            
+                            // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                            var content = '<div class="customoverlay">' +
+                                '  <a href="https://map.kakao.com/link/map/11394059" target="_blank">' +
+                                '    <span class="title">Novel Works</span>' +
+                                '  </a>' +
+                                '</div>';
+                            
+                            // 커스텀 오버레이가 표시될 위치입니다 
+                            var position = coords;  
+                            
+                            // 커스텀 오버레이를 생성합니다
+                            var customOverlay = new kakao.maps.CustomOverlay({
+                                map: map,
+                                position: position,
+                                content: content,
+                                yAnchor: 1 
+                            });
+                            map.setCenter(coords);
+                        } 
+                    });    
+                </script>
+            </div>
+        </section>
+    </div>
+    <footer id="footer">
+        <div class="container">
+            <div class="util clearFix">
+                <ul>
+                    <li>
+                        <a href="">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="">Terms & Conditions</a>
+                    </li>
+                    <li>
+                        <a href="">Location</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="address clearFix">
+                <dl>
+                    <dt>information</dt>
+                    <dd>
+                        <span class="title">Company</span>
+                        <span>Novel Works</span>
+                    </dd>
+                    <dd>
+                        <span class="title">CEO</span>
+                        <span>Sung Hyun, Lee</span>
+                    </dd>
+                    <dd>
+                        <span class="title">License No</span>
+                        <span>557-86-00290</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>Contact</dt>
+                    <dd>
+                        <span class="title">T</span>
+                        <span>82-2-2169-2289</span>
+                    </dd>
+                    <dd>
+                        <span class="title">F</span>
+                        <span>82-2-2169-2289</span>
+                    </dd>
+                    <dd>
+                        <span class="title">E</span>
+                        <span>info@novel-works.com</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>LOCATION</dt>
+                    <dd>
+                        <span class="title">Head office</span>
+                        <span>B-1001, Hyundai knowledge industry center, Doosan-ro 70, Geumchen-gu, Seoul, Republic of Korea.</span>
+                    </dd>
+                    <dd>
+                        <span class="title">Korea Factory</span>
+                        <span>58, Sinheung-ro 469 beon-gil, Bucheon-si, Gyeonggi-do, Republic of Korea.</span>
+                    </dd>
+                    <dd>
+                        <span class="title">China Factory</span>
+                        <span>3-3, No 17 Sanwei Gongye ST, Gushu, Xixiang, Baoan, Shenzhen, China</span>
+                    </dd>
+                    <p class="copyright">Copyright. 2019 Novelworks. All right reserved.</p>
+                </dl>
+            </div>
+        </div>
+    </footer>
+    <div id="sitemap" class="modal">
+        <div class="inner">
+            <h2>Site Map</h2>
+            <? include("../include/gnb.html"); ?>
+            <button class="btnClose">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

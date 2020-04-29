@@ -1,0 +1,295 @@
+*,*:before,*:after {
+    box-sizing: border-box;
+}
+:root {
+    --green-color: #2bb673;
+    --blue-color: #0ba9b5;
+}
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Lato", "Noto Sans KR", sans-serif;
+    color: #333;
+    line-height: 1.5;
+}
+body.overHidden {
+    overflow: hidden;
+    margin-right: 17px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.onlyMobile {
+    display: none;
+}
+/* skip */
+#skip a {
+    display: block;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #f00;
+    color: #fff;
+    position: fixed;
+    left: -9999px;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+#skip a:focus {
+    left: 0;
+}
+/* focus:tab키로 초점 맞춰지면 작동,, */
+
+/* header start */
+#header {
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    color: #999;
+    overflow: hidden;
+    transition: 0.25s ease;
+}
+#header:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height:1px;
+    top: 100px;
+    background-color: #d9d9d9;
+    opacity: 0;
+    transition: 0.25s;
+}
+#header.on {
+    background-color: #fff;
+    height: 300px;
+}
+#header.on:after{
+    opacity: 1;
+}
+#header.scroll {
+    background-color: #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+#logo {
+    float: left;
+    margin-left: 50px;
+    position: relative;
+    z-index: 3;
+}
+#gnb {
+    float: left;
+    margin-left: 50px;
+    text-align: center;
+}
+#gnb .gnbList > li {
+    float: left;
+}
+#gnb .gnbList .depth01 {
+    font-size: 1rem;
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 30px;
+    position: relative;
+}
+#gnb .gnbList .depth01:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #000;
+    transition: 0.25s ease;
+    transform: scaleX(0);
+}
+#gnb .gnbList > li:hover .depth01:after {
+    transform: scaleX(1);
+}
+#gnb .gnbList .depth02 a {
+    display: block;
+    padding: 5px 0;
+}
+#gnb .gnbList .depth01 .plus {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+#gnb .gnbList .depth01 .plus span {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+}
+#gnb .gnbList .depth01 .plus span:nth-child(2) {
+    transform: rotate(90deg);
+    transition: 0.25s ease;
+}
+#gnb .gnbList .depth01.on .plus span:nth-child(2) {
+    transform: rotate(0deg);
+}
+#header .util {
+    float: right;
+    position: relative;
+    z-index: 3;
+}
+#header .util .language {
+    float: left;
+    margin-top: 34px;
+}
+#header .util .language a {
+    display: block;
+    float: left;
+    width: 50px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #eee;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+#header .util .language a.on {
+    background-image: linear-gradient(90deg, rgb(43,182,116) 0%, rgb(12,169,180) 100%);
+    color: #fff;
+}
+#header .util .language a:first-child {
+    border-radius: 100px 0 0 100px;
+}
+#header .util .language a:nth-child(2) {
+    border-radius: 0 100px 100px 0;
+}
+#header .util .btnAll {
+    float: left;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+#header .util .btnAll span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #999;
+    position: absolute;
+    left: 35px;
+    transition: 0.25s ease-in-out;
+}
+#header .util .btnAll span:nth-child(1) {top:39px}
+#header .util .btnAll span:nth-child(2) {top: 49px;}
+#header .util .btnAll span:nth-child(3) {top: 59px;}
+
+#header .util .btnAll.on span:nth-child(1) {top:49px; transform: rotate(45deg);}
+#header .util .btnAll.on span:nth-child(2) {top: 49px; opacity: 0;}
+#header .util .btnAll.on span:nth-child(3) {top: 49px; transform: rotate(-45deg);}
+/*  */
+#footer {
+    padding: 100px 0;
+    background-color: #fff;
+    font-size: 0.825rem;
+}
+#footer .container {
+    width: 1700px;
+    margin: auto;
+}
+#footer .container .address {
+    margin-top: 30px;
+}
+#footer .container .util li {
+    float: left;
+    margin-right: 15px;
+}
+#footer .container .address dl {
+    float: left;
+    margin-right: 40px;
+}
+#footer .container .address dl dt {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+#footer .container .address dl dd {
+    margin-bottom: 10px;
+}
+#footer .container .address dd .title {
+    width: 80px;
+    color: #999; 
+}
+#footer .container .address dl:nth-child(1) dd .title {
+    display: inline-block;
+}
+#footer .container .address dl:nth-child(2) dd .title {
+    display: inline-block;
+}
+#footer .container .address dl:nth-child(3) dd .title {
+    display: inline-block;
+}
+
+#footer .container .copyright {
+    margin-top: 50px;
+}
+#sitemap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+}
+#sitemap .inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+}
+#sitemap .inner h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    background-color: var(--blue-color);
+}
+#sitemap .inner #gnb {
+    overflow: hidden;
+    float:none;
+    margin-left: 0;
+    padding: 0 50px 50px 50px;
+}
+#sitemap .inner #gnb .gnbList > li {
+    width: 19%;
+    margin: 0 0.5%;
+}
+#sitemap .inner #gnb .gnbList > li .depth01:after {
+    transform: scaleX(1);
+}
+#sitemap .inner .btnClose {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 64px;
+    height: 64px;
+}
+#sitemap .inner .btnClose span {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    left: 17px;
+    top: 32px;
+}
+#sitemap .inner .btnClose span:nth-child(1) {
+    transform: rotate(45deg);
+}
+#sitemap .inner .btnClose span:nth-child(2) {
+    transform: rotate(-45deg);
+}
