@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getSiblings</title>
+</head>
+<body>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li id="find-me">Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+        <li>Item 8</li>
+        <li>Item 9</li>
+    </ul>
+    <script>
+        /*!
+ * Get all siblings of an element
+ * (c) 2018 Chris Ferdinandi, MIT License, https://gomakethings.com
+ * @param  {Node}  elem The element
+ * @return {Array}      The siblings
+ */
+var getSiblings = function (elem) {
+
+// Setup siblings array and get the first sibling
+var siblings = [];
+var sibling = elem.parentNode.firstChild;
+
+// Loop through each sibling and push to the array
+while (sibling) {
+    if (sibling.nodeType === 1 && sibling !== elem) {
+        siblings.push(sibling);
+    }
+    sibling = sibling.nextSibling;
+}
+
+return siblings;
+
+};
+
+var elem = document.querySelector('#find-me');
+var siblings = getSiblings(elem);
+console.log(siblings);
+    </script>
+</body>
+</html>

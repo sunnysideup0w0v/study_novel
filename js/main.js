@@ -19,11 +19,30 @@ gnbli.addEventListener('mouseout',function(){
 // $("#header .util .language a").on("click",function(){
 //     $(this).toggleClass("on")
 // })
+var getSiblings = function (elem) {
+    // Setup siblings array and get the first sibling
+    var siblings = [];
+    var sibling = elem.parentNode.firstChild;
+    
+    // Loop through each sibling and push to the array
+    while (sibling) {
+        if (sibling.nodeType === 1 && sibling !== elem) {
+            siblings.push(sibling);
+        }
+        sibling = sibling.nextSibling;
+    }
+    return siblings;
+};
 for(var i=0;i<lang.length;i++){
     lang[i].addEventListener('click',function(e){
         e.preventDefault();
         if(!this.classList.contains("on")){
             this.classList.add("on");
+            var siblings = getSiblings(this);
+            console.log(siblings);
+            siblings[0].classList.remove("on");
+            // typeerror: console로 얻어지는 값의 형태가 배열이기 때문에 class가 존재하지 않았음 > 따라서 에러 발생함.
+            //  해결: 배열 원소 접근, class제거
         }else {
             this.classList.remove('on')
         }
