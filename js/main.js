@@ -1,13 +1,38 @@
-$("#gnb .gnbList > li").on("mouseenter",function(){
-    $("#header").addClass("on")
-});
-$("#gnb .gnbList > li").on("mouseleave",function(){
-    $("#header").removeClass("on")
-});
+let gnbli = document.querySelector("#gnb .gnbList");
+let lang = document.querySelectorAll("#header .util .language a")
+// $("#gnb .gnbList > li").on("mouseenter",function(){
+//     $("#header").addClass("on")
+// });
+// $("#gnb .gnbList > li").on("mouseleave",function(){
+//     $("#header").removeClass("on")
+// });
+// 수정 전
 
-$("#header .util .language a").on("click",function(){
-    $(this).toggleClass("on")
+gnbli.addEventListener('mouseover',function(){
+    document.querySelector("#header").classList.add('on');
+    console.log("header")
 })
+gnbli.addEventListener('mouseout',function(){
+    document.querySelector("#header").classList.remove('on');
+})
+
+// $("#header .util .language a").on("click",function(){
+//     $(this).toggleClass("on")
+// })
+for(var i=0;i<lang.length;i++){
+    lang[i].addEventListener('click',function(e){
+        e.preventDefault();
+        if(!this.classList.contains("on")){
+            this.classList.add("on");
+        }else {
+            this.classList.remove('on')
+        }
+    })
+}
+
+
+
+
 // let subTxt = new SplitText("#mainVisual .sub",{type:"words,chars"});
 // let mainTxt = new SplitText("#mainVisual .main",{type:"words,chars"});
 Splitting();
