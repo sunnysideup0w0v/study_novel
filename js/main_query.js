@@ -1,6 +1,5 @@
 let gnbli = document.querySelector("#gnb .gnbList");
-let lang = document.querySelectorAll("#header .util .language a");
-let body = document.body;
+let lang = document.querySelectorAll("#header .util .language a")
 // $("#gnb .gnbList > li").on("mouseenter",function(){
 //     $("#header").addClass("on")
 // });
@@ -216,7 +215,7 @@ let processMotion = gsap.timeline({paused:true,onComplete:function(){
     let num=0;
     let iconsArr = document.querySelectorAll("#process .icons li");
     iconsArr[0].classList.add('on')
-    iconMove = setInterval(function(){
+    let iconMove = setInterval(function(){
         num++;
         num = num%8;
         let onIcon = iconsArr[num]
@@ -225,6 +224,14 @@ let processMotion = gsap.timeline({paused:true,onComplete:function(){
             getSiblings(onIcon)[i].classList.remove('on')
         }
     },2000)
+    // $("#process .icons li").eq(num).addClass("on"); 
+    //     let iconMove = setInterval(function(){
+    //         num++;
+    //         num=num%8;
+    //         $("#process .icons li").eq(num).addClass("on"); 
+    //         $("#process .icons li").eq(num).siblings().removeClass("on"); 
+    //     },2000);
+    // 수정 전
 }});
 processMotion.from("#process li",{
     duration:1,
@@ -236,99 +243,77 @@ processMotion.from("#process li",{
     }
 })
 
-window.addEventListener('scroll',function(){
+$(window).on("scroll",function(){
     let stJs = window.scrollY;
-    let summaryJs = document.querySelector("#summary").getClientRects()[0].top;
-    let processJs = document.querySelector("#process").getClientRects()[0].top;
-    let header = document.querySelector("#header");
-    let summary = document.querySelector("#summary")
-    let process = document.querySelector("#process")
+    let summaryJs = -(document.querySelector("#summary").getClientRects()[0].top);
+    let processJs = -(document.querySelector("#process").getClientRects()[0].top);
+    
 
     if(stJs>0){
-        if(!header.classList.contains('scroll')){
-            header.classList.add('scroll')
+        if(!$("#header").hasClass("scroll")){
+            $("#header").addClass("scroll")
         } 
     } else {
-        if(header.classList.contains('scroll')){
-            header.classList.remove('scroll')
+        if($("#header").hasClass("scroll")){
+            $("#header").removeClass("scroll")
         }
     };
-    if(stJs>summaryJs-300){
-        if(!summary.classList.contains('scroll')){
-            summary.classList.add('scroll');
+    if(st>summary-300){
+        if(!$("#summary").hasClass("scroll")){
+            $("#summary").addClass("scroll");
             summaryMotion.restart();
         }
     };
-    if(stJs>processJs-200){
-    //     console.log("stJs:",stJs,"processJs:",processJs)
-        if(!process.classList.contains('scroll')){
-            process.classList.add('scroll');
+    if(st>process-300){
+        if(!$("#process").hasClass("scroll")){
+            $("#process").addClass("scroll");
             processMotion.restart();
         }
     }
-})
+});
 
-window.addEventListener('resize',function(){
-    let w = window.innerWidth;
-    let sitemap = document.querySelector("#sitemap");
-    let gnb = document.querySelector("#gnb");
-    let btnAll = document.querySelector("#header .btnAll");
-    let depth02 = gnb.querySelectorAll(".gnbList > li .depth02")
-
+$(window).on("resize",function(){
+    let w = $(window).width()+17;
     if(w<=1240){
-        if(!body.classList.contains('mobile')){
-            body.classList.add('mobile');
+        if(!$("body").hasClass("mobile")){
+            $("body").addClass("mobile")
         }
-        sitemap.style.display='none';
+        $("#sitemap").hide();
+        //hide=displaynone
+        $("body").removeClass("overHidden")
     } else {
-        if(body.classList.contains('mobile')){
-            body.classList.remove('mobile');
-            gnb.classList.remove('on');
-            btnAll.classList.remove('on');
-            depth02.removeAttribute('style');
+        if($("body").hasClass("mobile")){
+            $("body").removeClass("mobile")
+            $("#gnb").removeClass("on")
+            $("#header .btnALl").removeClass("on")
+            $("#gnb .gnbList > li .depth02").removeAttr("style");
         }
     }
 })
-window.dispatchEvent(new Event('resize'));
-window.dispatchEvent(new Event('scroll'));
-// $(window).trigger("resize");
-// $(window).trigger("scroll");
+$(window).trigger("resize");
+$(window).trigger("scroll")
 
-document.querySelector("#header .btnAll").addEventListener('click',function(){
-    if(!body.classList.contains('mobile')){
-        console.log("say hi")
-        document.querySelector("#sitemap").classList.add('show');
-        body.classList.add('overHidden');
+$(".btnAll").on("click",function(){
+    if(!$("body").hasClass("mobile")){
+        $("#sitemap").fadeIn(250);
+        $("body").addClass("overHidden")
     } else {
-        document.querySelector("#gnb").classList.toggle('on');
-        this.classList.toggle('on');
+        $("#gnb").toggleClass("on")
+        $(this).toggleClass("on")
     }
-    return false;
+    return false
 })
-// 해결해야 할 문제 1. mobile에서 btnAll을 클릭 한 채로 리사이즈를 하면 충돌로 에러발생(비티엔올 미작동, 어쩌구.....)
-
-document.querySelector("#sitemap .btnClose").addEventListener('click',function(){
-    document.querySelector("#sitemap").classList.remove('show');
-    body.classList.remove('overHidden');
-    return false;
+$("#sitemap .btnClose").on("click",function(){
+    $("#sitemap").fadeOut(250);
+    $("body").removeClass("overHidden")
+    return false
 })
-
-let depth01 = document.querySelectorAll("#gnb .gnbList > li .depth01");
-for(i=0;i<depth01.length;i++){
-    depth01[i].addEventListener('click',function(e){
-        console.log("hi")
-        if(document.querySelector('body').classList.contains('mobile')){
-            e.preventDefault();
-        }
-    })
-}
-// 아직 안 끝남!!!
-// $("#gnb .gnbList > li .depth01").on("click",function(){
-//     if($("body").hasClass("mobile")){
-//         $(this).next(".depth02").stop().slideToggle();
-//         $(this).parent().siblings().find(".depth02").stop().slideUp();
-//         $(this).toggleClass("on");
-//         $(this).parent().siblings().find(".depth01").removeClass("on");
-//         return false;
-//     }
-// })
+$("#gnb .gnbList > li .depth01").on("click",function(){
+    if($("body").hasClass("mobile")){
+        $(this).next(".depth02").stop().slideToggle();
+        $(this).parent().siblings().find(".depth02").stop().slideUp();
+        $(this).toggleClass("on");
+        $(this).parent().siblings().find(".depth01").removeClass("on");
+        return false;
+    }
+})

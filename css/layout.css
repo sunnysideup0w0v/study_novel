@@ -244,6 +244,11 @@ a {
     z-index: 999;
     display: none;
 }
+#sitemap.show {
+    display: block;
+    transition: 0.5s ease;
+    /* transition이 안 먹어요,,, */
+}
 #sitemap .inner {
     position: absolute;
     left: 50%;
