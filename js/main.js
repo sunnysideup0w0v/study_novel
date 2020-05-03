@@ -313,7 +313,7 @@ for(i=0;i<depth01.length;i++){
         }
     })
 }
-// 아직 안 끝남!!!
+// // 아직 안 끝남!!!
 // $("#gnb .gnbList > li .depth01").on("click",function(){
 //     if($("body").hasClass("mobile")){
 //         $(this).next(".depth02").stop().slideToggle();
