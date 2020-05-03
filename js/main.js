@@ -1,13 +1,6 @@
 let gnbli = document.querySelector("#gnb .gnbList");
 let lang = document.querySelectorAll("#header .util .language a");
 let body = document.body;
-// $("#gnb .gnbList > li").on("mouseenter",function(){
-//     $("#header").addClass("on")
-// });
-// $("#gnb .gnbList > li").on("mouseleave",function(){
-//     $("#header").removeClass("on")
-// });
-// 수정 전
 
 gnbli.addEventListener('mouseover',function(){
     document.querySelector("#header").classList.add('on');
@@ -17,9 +10,7 @@ gnbli.addEventListener('mouseout',function(){
     document.querySelector("#header").classList.remove('on');
 })
 
-// $("#header .util .language a").on("click",function(){
-//     $(this).toggleClass("on")
-// })
+
 var getSiblings = function (elem) {
     // Setup siblings array and get the first sibling
     var siblings = [];
@@ -42,8 +33,6 @@ for(var i=0;i<lang.length;i++){
             var siblings = getSiblings(this);
             console.log(siblings);
             siblings[0].classList.remove("on");
-            // typeerror: console로 얻어지는 값의 형태가 배열이기 때문에 class가 존재하지 않았음 > 따라서 에러 발생함.
-            //  해결: 배열 원소 접근, class제거
         }else {
             this.classList.remove('on')
         }
@@ -305,7 +294,6 @@ document.querySelector("#header .btnAll").addEventListener('click',function(){
     }
     return false;
 })
-// 해결해야 할 문제 1. mobile에서 btnAll을 클릭 한 채로 리사이즈를 하면 충돌로 에러발생(비티엔올 미작동, 어쩌구.....)
 
 document.querySelector("#sitemap .btnClose").addEventListener('click',function(){
     document.querySelector("#sitemap").classList.remove('show');
@@ -319,6 +307,9 @@ for(i=0;i<depth01.length;i++){
         console.log("hi")
         if(document.querySelector('body').classList.contains('mobile')){
             e.preventDefault();
+            console.log(this)
+            let parentSiblings = getSiblings(this.parentElement);
+            console.log("child:",parentSiblings.children);
         }
     })
 }
