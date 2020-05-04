@@ -302,16 +302,21 @@ document.querySelector("#sitemap .btnClose").addEventListener('click',function()
 })
 
 let depth01 = document.querySelectorAll("#gnb .gnbList > li .depth01");
-for(i=0;i<depth01.length;i++){
-    depth01[i].addEventListener('click',function(e){
-        console.log("hi")
-        if(document.querySelector('body').classList.contains('mobile')){
+if(document.querySelector('body').classList.contains('mobile')){
+    for(i=0;i<depth01.length;i++){
+        depth01[i].addEventListener('click',function(e){
             e.preventDefault();
-            console.log(this)
-            let parentSiblings = getSiblings(this.parentElement);
-            console.log("child:",parentSiblings.children);
-        }
-    })
+            if(e.currentTarget.parentNode.classList.contains("on")){
+                e.currentTarget.parentNode.classList.remove("on");
+            } else {
+                e.currentTarget.parentNode.classList.add("on")
+                let parentSiblings = getSiblings(e.currentTarget.parentElement);
+                for(j=0;j<parentSiblings.length;j++){
+                    parentSiblings[j].classList.remove("on");
+                }
+            }
+        })
+    }
 }
 // // 아직 안 끝남!!!
 // $("#gnb .gnbList > li .depth01").on("click",function(){

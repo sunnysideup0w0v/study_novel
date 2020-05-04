@@ -27,8 +27,15 @@
     #gnb .gnbList > li .depth02 {
         background-color: #eee;
         margin-top: 0;
+        opacity: 0;
+        height: 0;
+        transition: 0.5s ease;
+    }
+    #gnb .gnbList > li.on .depth02 {
+        display: block;
         padding: 10px 0;
-        display: none;
+        opacity: 1;
+        height: 100%;
     }
     #gnb .gnbList > li .depth02 a {
         display: block;

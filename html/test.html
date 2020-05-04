@@ -4,25 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .show h1{
-            opacity: 1;
-            transition: 0.5s ease;
-        }
-        .show.hidden h1 {
-            opacity: 0;
-            transition: 0.5s ease;
-        }
-    </style>
+    
 </head>
 <body>
-    <div class="show">
-        <button>CLICK</button>
-        <h1>Hello World</h1>
-    </div>
+        <a href="">click</a>
     <script>
-        document.querySelector(".show button").addEventListener('click',function(){
-            document.querySelector(".show").classList.toggle('hidden')
+        document.querySelector("a").addEventListener('click',function(e){
+            e.preventDefault();
+            console.log("this",this);
+            console.log("e.currentTarget",e.currentTarget)
         })
     </script>
 </body>
